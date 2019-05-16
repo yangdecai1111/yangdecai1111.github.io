@@ -84,13 +84,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>hexo+github pages搭建博客<br>常见搭建博客的工具<br>自己搭建：</p>
+<p>php: typecho、wordpress</p>
+<p>nodejs: hexo+github pages 或 jekyll +github pages</p>
+<p>借助第三方平台：</p>
+<p>csdn、segmentfault.com、博客园、简书等等</p>
+<p>为什么要搭建个人博客<br>记录与备忘</p>
+<p>优化技术，加深技术的理解</p>
+<p>求职</p>
+<p>坚持</p>
+<p>个人品牌</p>
+<p>…..</p>
+<p>使用hexo+github pages搭建博客<br>安装要求<br>确保自己电脑以安装以下工具：</p>
+<p>git<br>nodejs<br>安装步骤<br>官网地址： <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
+<p>hexo模板主题：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<p>1、全局安装hexo-cli</p>
+<p>npm install hexo-cli -g<br>2、初始化项目</p>
+<p>hexo init <folder><br>3、hexo常用的几个命令：</folder></p>
+<p>hexo n ‘文章的名称’                  #创建文章<br>hexo g                         #生成静态页面<br>hexo s                               #启动本地服务，进行预览<br>hexo s 后直接打开浏览器输入地址进行预览即可。</p>
+<p>​</p>
+<p>创建github pages仓库<br>1、要求</p>
+<p>创建的仓库名格式必须为： 用户名.github.io</p>
+<p>如github用户名为ww1234, 仓库名为：ww1234.github.io</p>
+<p>2、修改 _config.yml 配置git仓库：</p>
+<p>修改配置文件 _config.yml ，指定仓库地址<br>deploy:<br>  type: git<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:qingtian-boy/qingtian-boy.github.io.git<br>  branch: master<br>需配置好ssh协议的私钥和公钥</p>
+<p>安装一个工具，用于部署到仓库中<br>npm install hexo-deployer-git –save<br>网站部署到github page仓库中</p>
+<p>hexo d<br>换hexo网站主题<br>参考地址：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<p>在创建一个仓库，用于备份博客源码</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/搭建博客/" data-id="cjvqb780a00051crauxu7udrw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/搭建博客/" data-id="cjvqbku7i0003jcramo0n2eoa" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/如何搭建一个博客/">如何搭建一个博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/请往下看，哈哈/">请往下看，哈哈</a></li></ul>
+
     </footer>
   </div>
   
@@ -120,11 +149,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>我们的</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/JS入门/" data-id="cjvqb77yz00001crakpvx6lgu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/JS入门/" data-id="cjvqbku6z0000jcra5bnxjtaw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/入门/">入门</a></li></ul>
@@ -171,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/hello-world/" data-id="cjvqb780d00061crabapzpeku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/hello-world/" data-id="cjvqbku7a0001jcra64w1fyoy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +224,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/入门/">入门</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/入门/">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/如何搭建一个博客/">如何搭建一个博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/请往下看，哈哈/">请往下看，哈哈</a></li></ul>
     </div>
   </div>
 
@@ -204,7 +234,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/入门/" style="font-size: 10px;">入门</a>
+      <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/入门/" style="font-size: 10px;">入门</a> <a href="/tags/如何搭建一个博客/" style="font-size: 10px;">如何搭建一个博客</a> <a href="/tags/请往下看，哈哈/" style="font-size: 10px;">请往下看，哈哈</a>
     </div>
   </div>
 
