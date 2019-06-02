@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="系列专题,工程杂谈,职业发展,示例项目,业界实践,经典图书,经典文章,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="个人博客麻烦点star，不要fork  或许现在很多企业和团队尚未重视前端工程，或许前端工程在很多人眼里还只是“构建工具”的代名词，又或许未来前端领域的变革使得一切工程问题从根本上得到解决。不管怎样，我只是希望当下能认真的记录自己在前端工程领域的所见所想，与正在经历前端工程化改进，并被此过程困扰的同学交流心得。  欢迎一起探讨各自在前端开发中遇到的工程问题 目录  系列专题 前端工程——基础篇">
+<meta name="keywords" content="系列专题,工程杂谈,职业发展,示例项目,业界实践,经典图书,经典文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客">
+<meta property="og:url" content="http://yoursite.com/2019/06/20/font/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="个人博客麻烦点star，不要fork  或许现在很多企业和团队尚未重视前端工程，或许前端工程在很多人眼里还只是“构建工具”的代名词，又或许未来前端领域的变革使得一切工程问题从根本上得到解决。不管怎样，我只是希望当下能认真的记录自己在前端工程领域的所见所想，与正在经历前端工程化改进，并被此过程困扰的同学交流心得。  欢迎一起探讨各自在前端开发中遇到的工程问题 目录  系列专题 前端工程——基础篇">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-02T02:03:25.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人博客">
+<meta name="twitter:description" content="个人博客麻烦点star，不要fork  或许现在很多企业和团队尚未重视前端工程，或许前端工程在很多人眼里还只是“构建工具”的代名词，又或许未来前端领域的变革使得一切工程问题从根本上得到解决。不管怎样，我只是希望当下能认真的记录自己在前端工程领域的所见所想，与正在经历前端工程化改进，并被此过程困扰的同学交流心得。  欢迎一起探讨各自在前端开发中遇到的工程问题 目录  系列专题 前端工程——基础篇">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/20/font/">
+
+
+
+
+
+  <title>个人博客 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/font/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">个人博客</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-20T11:40:16+08:00">
+                2019-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h1><p>麻烦点star，不要fork</p>
+<blockquote>
+<p>或许现在很多企业和团队尚未重视前端工程，或许前端工程在很多人眼里还只是“构建工具”的代名词，又或许未来前端领域的变革使得一切工程问题从根本上得到解决。不管怎样，我只是希望当下能认真的记录自己在前端工程领域的所见所想，与正在经历前端工程化改进，并被此过程困扰的同学交流心得。</p>
+</blockquote>
+<p><a href="https://github.com/fouber/blog/issues/8" target="_blank" rel="noopener">欢迎一起探讨各自在前端开发中遇到的工程问题</a></p>
+<p>目录</p>
+<ul>
+<li>系列专题<ul>
+<li><a href="https://github.com/fouber/blog/issues/10" target="_blank" rel="noopener">前端工程——基础篇</a></li>
+</ul>
+</li>
+<li>工程杂谈<ul>
+<li><a href="https://github.com/fouber/blog/issues/1" target="_blank" rel="noopener">浅谈前端集成解决方案</a></li>
+<li><a href="https://github.com/fouber/blog/issues/3" target="_blank" rel="noopener">前端工程与性能优化</a></li>
+<li><a href="https://github.com/fouber/blog/issues/2" target="_blank" rel="noopener">前端开发体系建设日记</a></li>
+<li><a href="https://github.com/fouber/blog/issues/4" target="_blank" rel="noopener">前端开发体与模块化框架</a></li>
+<li><a href="https://github.com/fouber/blog/issues/6" target="_blank" rel="noopener">大公司里怎样开发和部署前端代码？</a></li>
+<li><a href="https://github.com/fouber/blog/issues/7" target="_blank" rel="noopener">如何进行前端自动化测试？</a></li>
+<li><a href="https://github.com/fouber/blog/issues/5" target="_blank" rel="noopener">md5戳计算过程</a></li>
+</ul>
+</li>
+<li>职业发展<ul>
+<li><a href="https://github.com/fouber/blog/issues/41" target="_blank" rel="noopener">一个程序员的成长之路</a></li>
+</ul>
+</li>
+<li>示例项目<ul>
+<li><a href="https://github.com/fouber/static-resource-management-system-demo" target="_blank" rel="noopener">php版静态资源管理系统示例</a></li>
+<li><a href="https://github.com/fouber/fis-php-md.js" target="_blank" rel="noopener">模块化开发组合php版静态资源管理示例</a></li>
+<li><a href="https://github.com/fouber/fis-java-jsp" target="_blank" rel="noopener">java版静态资源管理系统示例</a></li>
+<li><a href="https://github.com/fouber/static-resource-digest-project" target="_blank" rel="noopener">静态资源缓存控制演示项目</a></li>
+</ul>
+</li>
+<li>业界实践<ul>
+<li><a href="http://tech.meituan.com/frontend-component-practice.html" target="_blank" rel="noopener">前端组件化开发实践</a> by 美团 </li>
+<li><a href="https://github.com/xufei/blog/issues/19" target="_blank" rel="noopener">2015前端组件化框架之路</a> by <a href="http://weibo.com/sharpmaster" target="_blank" rel="noopener">@民工精髓</a></li>
+<li><a href="http://fex.baidu.com/blog/2014/03/fis-module/" target="_blank" rel="noopener">前端工程之模块化</a> by <a href="http://weibo.com/u/1916384703" target="_blank" rel="noopener">@沈洪顺</a></li>
+<li>前端xss防火墙系列文章 by <a href="https://github.com/zjcqoo" target="_blank" rel="noopener">@ＥtherＤream</a><ul>
+<li><a href="http://fex.baidu.com/blog/2014/06/xss-frontend-firewall-1/" target="_blank" rel="noopener">内联事件拦截</a></li>
+<li><a href="http://fex.baidu.com/blog/2014/06/xss-frontend-firewall-2/" target="_blank" rel="noopener">可疑模块拦截</a></li>
+<li><a href="http://fex.baidu.com/blog/2014/06/xss-frontend-firewall-3/" target="_blank" rel="noopener">无懈可击的钩子</a></li>
+<li><a href="http://fex.baidu.com/blog/2014/06/xss-frontend-firewall-4/" target="_blank" rel="noopener">天衣无缝的防护</a></li>
+<li><a href="http://fex.baidu.com/blog/2014/06/xss-frontend-firewall-5" target="_blank" rel="noopener">整装待发</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>经典图书<ul>
+<li>《<a href="http://book.douban.com/subject/2084131/" target="_blank" rel="noopener">High Performance Web Sites</a>》（<a href="http://book.douban.com/subject/3132277/" target="_blank" rel="noopener">高性能网站建设指南</a>）</li>
+<li>《<a href="http://book.douban.com/subject/3686503/" target="_blank" rel="noopener">Even Faster Web Sites</a>》（<a href="http://book.douban.com/subject/4719162/" target="_blank" rel="noopener">高性能网站建设进阶指南</a>）</li>
+<li>《<a href="http://book.douban.com/subject/21866396/" target="_blank" rel="noopener">High Performance Browser Networking</a>》（<a href="http://book.douban.com/subject/25856314/" target="_blank" rel="noopener">Web性能权威指南</a>）</li>
+</ul>
+</li>
+<li>经典文章<ul>
+<li><a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">Best Practices for Speeding Up Your Web Site（雅虎35条）</a></li>
+<li><a href="http://v.youku.com/v_show/id_XMjI5OTUxMjE2.html" target="_blank" rel="noopener">Facebook静态网页资源的管理和优化</a> [<a href="http://velocity.oreilly.com.cn/2010/ppts/VelocityChina2010Dec7StaticResource.pdf" target="_blank" rel="noopener">PDF</a>] by <a href="http://weibo.com/weixiaoliang9" target="_blank" rel="noopener">@David Wei</a></li>
+<li><a href="http://v.youku.com/v_show/id_XMzUwOTQzMzA4.html" target="_blank" rel="noopener">Facebook移动互联网应用的性能优化</a> [<a href="http://velocity.oreilly.com.cn/2011/ppts/MobilePerformanceVelocity2011_DavidWei.pdf" target="_blank" rel="noopener">PDF</a>] by <a href="http://weibo.com/weixiaoliang9" target="_blank" rel="noopener">@David Wei</a></li>
+<li><a href="https://developers.google.com/speed/docs/insights/rules?csw=1" target="_blank" rel="noopener">PageSpeed Insights规则</a></li>
+<li><a href="https://developers.google.com/speed/docs/insights/mobile" target="_blank" rel="noopener">Mobile Analysis in PageSpeed Insights</a></li>
+<li>Optimizing the Critical Rendering Path for Instant Mobile Websites [<a href="https://docs.google.com/presentation/d/1IRHyU7_crIiCjl0Gvue0WY3eY_eYvFQvSfwQouW9368/present?slide=id.p19" target="_blank" rel="noopener">slides</a>,<a href="https://www.youtube.com/watch?v=YV1nKLWoARQ" target="_blank" rel="noopener">video</a>]</li>
+<li>Instant Mobile Websites: Techniques and Best Practices [<a href="http://storage.googleapis.com/io-2013/presentations/239-%20Instant%20Mobile%20Websites-%20Techniques%20and%20Best%20Practices.pdf" target="_blank" rel="noopener">slides</a>, <a href="https://www.youtube.com/watch?v=Bzw8-ZLpwtw" target="_blank" rel="noopener">video</a>]</li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/" target="_blank" rel="noopener">Critical Rendering Path（关键呈现路径）</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/?hl=zh-cn" target="_blank" rel="noopener">Optimizing Content Efficienc（优化内容效率）</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/rendering/?hl=zh-cn" target="_blank" rel="noopener">Rendering（渲染性能）</a></li>
+<li><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="noopener">How browsers work</a></li>
+</ul>
+</li>
+</ul>
+<p>微博 <a href="http://www.weibo.com/fouber" target="_blank" rel="noopener">@前端农民工</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>生活不易，求打赏~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="John Doe WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/系列专题/" rel="tag"># 系列专题</a>
+          
+            <a href="/tags/工程杂谈/" rel="tag"># 工程杂谈</a>
+          
+            <a href="/tags/职业发展/" rel="tag"># 职业发展</a>
+          
+            <a href="/tags/示例项目/" rel="tag"># 示例项目</a>
+          
+            <a href="/tags/业界实践/" rel="tag"># 业界实践</a>
+          
+            <a href="/tags/经典图书/" rel="tag"># 经典图书</a>
+          
+            <a href="/tags/经典文章/" rel="tag"># 经典文章</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/02/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="your uid"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#个人博客"><span class="nav-number">1.</span> <span class="nav-text">个人博客</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
